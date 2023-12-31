@@ -1,9 +1,9 @@
-import TaskRepository from "../repositories/taskRepository";
+import DeleteTaskRepository from "../repositories/deleteTaskRepository";
 
 export class EditStatusTasks {
-    repository: TaskRepository;
+    repository: DeleteTaskRepository;
     
-    constructor(taskRepository: TaskRepository) {
+    constructor(taskRepository: DeleteTaskRepository) {
         this.repository = taskRepository
     }
     async Execute(id:number,sort:boolean,type:number): Promise<boolean> {

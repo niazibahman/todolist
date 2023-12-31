@@ -1,10 +1,10 @@
 import { Task } from "../entities/task";
-import TaskRepository from "../repositories/taskRepository";
+import GetTaskRepository from "../repositories/getTaskRepository";
 
 export class GetTasks {
-    repository: TaskRepository;
+    repository: GetTaskRepository;
 
-    constructor(taskRepository: TaskRepository) {
+    constructor(taskRepository: GetTaskRepository) {
         this.repository = taskRepository
     }
     async Execute(): Promise<Task[]> {

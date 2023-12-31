@@ -1,9 +1,9 @@
-import TaskRepository from "../repositories/taskRepository";
+import AddTaskRepository from "../repositories/addTaskRepository";
 
 export class AddTasks {
-    repository: TaskRepository;
+    repository: AddTaskRepository;
 
-    constructor(taskRepository: TaskRepository) {
+    constructor(taskRepository: AddTaskRepository) {
         this.repository = taskRepository
     }
     async Execute(item:string): Promise<boolean> {
