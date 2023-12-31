@@ -1,6 +1,6 @@
 import DeleteTaskRepository from "../repositories/deleteTaskRepository";
 
-export class EditStatusTasks {
+export class DeleteTasks {
     repository: DeleteTaskRepository;
     
     constructor(taskRepository: DeleteTaskRepository) {

@@ -1,9 +1,32 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import { useEffect } from 'react'
+import { GetTasks } from '@/core/domain/usecases/getTasks'
+import GetTaskRepositoryImplement from '@/core/data/repositories/getTaskRepositoriesImplement'
+import { GetDataSourceImplement } from '@/core/data/dataSoureses/getDataSource'
+import { AddTasks } from '@/core/domain/usecases/addTask'
+import AddTaskRepositoryImplement from '@/core/data/repositories/addTaskRepositoriesImplement'
+import { AddDataSourceImplement } from '@/core/data/dataSoureses/addDataSource'
+import { DeleteTasks } from '@/core/domain/usecases/deleteTask'
+import DeleteTaskRepositoryImplement from '@/core/data/repositories/deleteTaskRepositoriesImplement'
+import { DeleteDataSourceImplement } from '@/core/data/dataSoureses/deleteDataSource'
+import { EditItemTasks, EditStatusTasks } from '@/core/domain/usecases/editTask'
+import EditStatusTaskRepositoryImplement from '@/core/data/repositories/editStatusTaskRepositoriesImplement'
+import { EditStatusDataSourceImplement } from '@/core/data/dataSoureses/editStatusDtatSource'
+import EditItemTaskRepositoryImplement from '@/core/data/repositories/editItemTaskRepositoriesImplement'
+import { EditItemDataSourceImplement } from '@/core/data/dataSoureses/editItemDtatSource'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const f=async()=>{
+    const d = new EditItemTasks(new EditItemTaskRepositoryImplement(new EditItemDataSourceImplement()));
+    const h =await d.Execute(289,"so goodddddd");
+    console.log(h)
+  }
+  useEffect(()=>{
+    f();
+  },[])
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
